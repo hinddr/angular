@@ -15,10 +15,10 @@
           <h4>Filtered by: </h4>
         </div>
       </div>
-      <div class='table' *ngIf='products'>
-        <table class='table'>
+      <div class='table' >
+        <table class='table' *ngIf='products && products.length'>
           <thead>
-            <tr>
+            <tr >
               <th>
                 <button class='btn btn-primary'>
                  showImage 
@@ -32,7 +32,16 @@
             </tr>
           </thead>
           <tbody>
-           
+              <tr *ngFor='let product of products'>
+                <td>
+                  <img [src]='product.imageUrl' [title]='product.productName'>
+                </td>
+              <td>{{product.productName}}</td>
+              <td>{{product.productCode}}</td>
+              <td>{{product.releaseDate}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.starRating}}</td>
+           </tr>
           </tbody>
         </table>
       </div>
