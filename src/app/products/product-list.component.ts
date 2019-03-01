@@ -10,6 +10,7 @@ import { Component } from "@angular/core";
     imageWidth: number =50;
     imageMargin: number =2;
     showImage:boolean = false;
+    listFilter: string = 'cart';
     
     products : any[]=[    
       {
@@ -34,7 +35,7 @@ import { Component } from "@angular/core";
         }
       ];
       toggleImage():void {
-        this.showImage=!this.showImage;
+        this.showImage = !this.showImage;
       }
     }
   
